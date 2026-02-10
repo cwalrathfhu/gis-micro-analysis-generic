@@ -1,0 +1,89 @@
+{
+  "profileId": "template-profile",
+  "name": "Template Profile",
+  "description": "Starter template for configuring a bespoke GIS micro-analysis tool.",
+  "version": "0.1.0",
+  "defaults": {
+    "bufferMiles": 0.5,
+    "stationBufferMiles": 0.5,
+    "stationServiceMiles": 1.0,
+    "geometryPrecision": 6
+  },
+  "modules": [
+    {
+      "moduleId": "population",
+      "enabled": true,
+      "inputMappings": {
+        "acs": {
+          "source": "api",
+          "format": "json",
+          "fieldMap": {
+            "population": "B01003_001E",
+            "households": "B11001_001E"
+          }
+        }
+      }
+    },
+    {
+      "moduleId": "employment",
+      "enabled": false,
+      "inputMappings": {
+        "lodes": {
+          "source": "file",
+          "format": "csv",
+          "fieldMap": {
+            "geoid": "w_geocode",
+            "jobs": "C000"
+          }
+        }
+      }
+    },
+    {
+      "moduleId": "essential-services",
+      "enabled": true,
+      "inputMappings": {
+        "services": {
+          "source": "file",
+          "format": "geojson",
+          "fieldMap": {
+            "name": "name",
+            "type": "type"
+          }
+        }
+      }
+    }
+  ],
+  "ratingRules": [
+    {
+      "metricId": "population-density",
+      "scale": [
+        { "label": "High", "min": 8000, "max": null },
+        { "label": "Medium", "min": 4000, "max": 7999.999 },
+        { "label": "Low", "min": null, "max": 3999.999 }
+      ],
+      "rounding": 0,
+      "notes": "Replace with project-specific breakpoints."
+    },
+    {
+      "metricId": "essential-services-average",
+      "scale": [
+        { "label": "High", "min": 10, "max": null },
+        { "label": "Medium", "min": 5, "max": 9.999 },
+        { "label": "Low", "min": null, "max": 4.999 }
+      ],
+      "rounding": 1,
+      "notes": "Adjust based on local expectations."
+    }
+  ],
+  "ui": {
+    "title": "Generic GIS Micro-Analysis Tool",
+    "subtitle": "Configurable screening tool",
+    "disclaimer": "Planning-grade estimates only.",
+    "moduleOrder": ["population", "essential-services", "employment"],
+    "labels": {
+      "stations": "Stations",
+      "buffers": "Buffers",
+      "union": "Station Area"
+    }
+  }
+}

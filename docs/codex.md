@@ -2,8 +2,8 @@
 
 Before doing anything else, you MUST:
 
-1. **Read `ARCHITECTURE.md`** — the authoritative reference for app structure, components, state, functions, charts, and UI layout.
-2. **Read `CHANGELOG.md`** — session-by-session history of all changes. Review to understand what has already been built, recently changed, or intentionally removed.
+1. **Read `ARCHITECTURE.md`** — the authoritative reference for app structure, components, state, functions, charts, and UI layout. (NOTE: This does not exist yet. We will create it later)
+2. **Read `CHANGELOG.md`** — session-by-session history of all changes. Review to understand what has already been built, recently changed, or intentionally removed. (NOTE: this does not exist yet. We will create it later)
 3. **Notify the user** which branch you are on and that it includes all prior work (see Branch Management below).
 
 D

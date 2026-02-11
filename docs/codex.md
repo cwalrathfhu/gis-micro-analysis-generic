@@ -6,14 +6,12 @@ Before doing anything else, you MUST:
 2. **Read `CHANGELOG.md`** — session-by-session history of all changes. Review to understand what has already been built, recently changed, or intentionally removed. (NOTE: this does not exist yet. We will create it later)
 3. **Notify the user** which branch you are on and that it includes all prior work (see Branch Management below).
 
-D
 
 ## Developer Context
 
 **User Experience Level**: Beginner/non-coder
 - Limited experience with Git, GitHub, and project development
-- Primarily using web Codex interface and committing to GitHub manually, not terminal-based development
-- May use VS Code primarily for running `npm run dev` and pulling from Git but needs instructions on doing so if asked
+- Primarily using web Codex interface and committing to GitHub manually, not terminal-based development+
 - Requires clear, step-by-step instructions with explicit file paths
 
 ---
